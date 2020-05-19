@@ -6,19 +6,9 @@ if [ -e /dev/dbox/oled0 ] ; then
 fi
 
 # Create hdmi cec device
-if [ ! -e /dev/hdmi_cec ] ; then
+if ! [ -e /dev/hdmi_cec ] ; then
         /bin/mknod /dev/hdmi_cec c 149 0
 fi
 
 # Flush eth0 device which is set by kernel cmdline
 ip addr flush dev eth0 scope global
-
-if [ ! -e /boot/audio.elf ] ; then
-	echo "Audio firmware missing!"
-	echo "Audio FW missing!" > /dev/vfd
-fi
-
-if [ ! -e /boot/video.elf ] ; then
-	echo "Video firmware missing!"
-	echo "Video FW missing!" > /dev/vfd
-fi
