@@ -1,25 +1,25 @@
 #ifndef __AOTOM_GPIO_H__
 #define __AOTOM_GPIO_H__
 
-#define PIO_BITS                			8
+#define PIO_BITS                            8
 
-#define GPIO_SIMULATE_I2C_SCL_PORT			2
-#define GPIO_SIMULATE_I2C_SCL_BIT			0
+#define GPIO_SIMULATE_I2C_SCL_PORT          2
+#define GPIO_SIMULATE_I2C_SCL_BIT           0
 
-#define GPIO_SIMULATE_I2C_SDA_PORT			2
-#define GPIO_SIMULATE_I2C_SDA_BIT			1
+#define GPIO_SIMULATE_I2C_SDA_PORT          2
+#define GPIO_SIMULATE_I2C_SDA_BIT           1
 
-#define GPIO_I2C_FIRST_SCL_PORT				2
-#define GPIO_I2C_FIRST_SCL_BIT				2
+#define GPIO_I2C_FIRST_SCL_PORT             2
+#define GPIO_I2C_FIRST_SCL_BIT              2
 
-#define GPIO_I2C_FIRST_SDA_PORT				2
-#define GPIO_I2C_FIRST_SDA_BIT				3
+#define GPIO_I2C_FIRST_SDA_PORT             2
+#define GPIO_I2C_FIRST_SDA_BIT              3
 
-#define GPIO_I2C_SECOND_SCL_PORT			2
-#define GPIO_I2C_SECOND_SCL_BIT				5
+#define GPIO_I2C_SECOND_SCL_PORT            2
+#define GPIO_I2C_SECOND_SCL_BIT             5
 
-#define GPIO_I2C_SECOND_SDA_PORT			2
-#define GPIO_I2C_SECOND_SDA_BIT				6
+#define GPIO_I2C_SECOND_SDA_PORT            2
+#define GPIO_I2C_SECOND_SDA_BIT             6
 
 typedef struct YWLIB_ListHead_s
 {
@@ -75,7 +75,7 @@ typedef struct YWGPIO_GpioDeviceList_s
 {
 	YWLIB_ListHead_T     YWGPIO_GpioList;
 	U32                  GpioIndex;
-	void				 *PrivateData;
+	void                 *PrivateData;
 } YWGPIO_GpioDeviceList_T;
 
 typedef struct YWGPIO_Feature_s
@@ -89,9 +89,8 @@ typedef struct YWGPIO_OpenParams_s
 	U32                 GpioIndex;
 	YWGPIO_IOMode_T     IoMode;
 	YWGPIO_WorkMode_T   WorkMode;
-	void 				*PrivateData;
+	void                *PrivateData;
 } YWGPIO_OpenParams_T;
-
 
 typedef void (* YWGPIO_ISRFunc_T)(YWGPIO_Handle_T GpioHandle);
 

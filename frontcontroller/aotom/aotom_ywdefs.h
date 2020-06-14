@@ -86,49 +86,47 @@
 /*Event Type*/
 #define YW_EVENT_CODE(a,b)  	((b==0)?0:(YW_MODULE_SET_ID(a) +b))
 
-
 #ifndef TRUE
-#define TRUE (1 == 1)
+    #define TRUE (1 == 1)
 #endif
 #ifndef FALSE
-#define FALSE (!TRUE)
+    #define FALSE (!TRUE)
 #endif
 
 #ifndef NULL
-#define NULL 0
+	#define NULL 0
 #endif
 
 /*mid public error*/
 enum
 {
-	YWMID_ERROR_BAD_PARAMETER  = YW_MODULE_SET_ID(YWMID_MODULE_PUBLIC_ID),    /* Bad parameter passed       */
-	YWMID_ERROR_NO_MEMORY,                 		/* Memory allocation failed   */
-	YWMID_ERROR_ALREADY_INITIALIZED,       		/* Device already initialized */
-	YWMID_ERROR_NO_INITIALIZED,					/* Device has not been initialized*/
-	YWMID_ERROR_NO_FREE_HANDLES,          		/* Cannot open device again   */
-	YWMID_ERROR_OPEN_HANDLE,               		/* At least one open handle   */
-	YWMID_ERROR_INVALID_HANDLE,            		/* Handle is not valid        */
-	YWMID_ERROR_FEATURE_NOT_SUPPORTED   		/* Feature unavailable        */
+    YWMID_ERROR_BAD_PARAMETER  = YW_MODULE_SET_ID(YWMID_MODULE_PUBLIC_ID ),   /* Bad parameter passed       */
+    YWMID_ERROR_NO_MEMORY,                 		/* Memory allocation failed   */
+    YWMID_ERROR_ALREADY_INITIALIZED,       		/* Device already initialized */
+    YWMID_ERROR_NO_INITIALIZED,					/* Device has not been initialized*/
+    YWMID_ERROR_NO_FREE_HANDLES,          		/* Cannot open device again   */
+    YWMID_ERROR_OPEN_HANDLE,               		/* At least one open handle   */
+    YWMID_ERROR_INVALID_HANDLE,            		/* Handle is not valid        */
+    YWMID_ERROR_FEATURE_NOT_SUPPORTED   		/* Feature unavailable        */
 };
 
 /*Hal public error*/
 enum
 {
-	YWHAL_ERROR_BAD_PARAMETER  = YW_MODULE_SET_ID(YWHAL_MODULE_PUBLIC_ID),    /* Bad parameter passed  */
-	YWHAL_ERROR_NO_MEMORY,                 			/* Memory allocation failed   */
-	YWHAL_ERROR_UNKNOWN_DEVICE,            		/* Unknown device */
-	YWHAL_ERROR_ALREADY_INITIALIZED,      		/* Device already initialized */
-	YWHAL_ERROR_NO_INITIALIZED,					/* Device has not been initialized*/
-	YWHAL_ERROR_NO_FREE_HANDLES,          		/* Cannot open device again   */
-	YWHAL_ERROR_OPEN_HANDLE,              		/* At least one open handle   */
-	YWHAL_ERROR_INVALID_HANDLE,            		/* Handle is not valid        */
-	YWHAL_ERROR_FEATURE_NOT_SUPPORTED,   		/* Feature unavailable        */
-	YWHAL_ERROR_TIMEOUT,                  		/* Timeout occured            */
-	YWHAL_ERROR_DEVICE_BUSY,              		/* Device is currently busy   */
-	YWHAL_ERROR_NOT_OPEN,						/*Device is not open*/
-	YWHAL_ERROR_NOT_ENOUGH_DEVICE				/*Device is all opened*/
+    YWHAL_ERROR_BAD_PARAMETER  = YW_MODULE_SET_ID(YWHAL_MODULE_PUBLIC_ID ),   /* Bad parameter passed  */
+    YWHAL_ERROR_NO_MEMORY,                 			/* Memory allocation failed   */
+    YWHAL_ERROR_UNKNOWN_DEVICE,            		/* Unknown device */
+    YWHAL_ERROR_ALREADY_INITIALIZED,      		/* Device already initialized */
+    YWHAL_ERROR_NO_INITIALIZED,					/* Device has not been initialized*/
+    YWHAL_ERROR_NO_FREE_HANDLES,          		/* Cannot open device again   */
+    YWHAL_ERROR_OPEN_HANDLE,              		/* At least one open handle   */
+    YWHAL_ERROR_INVALID_HANDLE,            		/* Handle is not valid        */
+    YWHAL_ERROR_FEATURE_NOT_SUPPORTED,   		/* Feature unavailable        */
+    YWHAL_ERROR_TIMEOUT,                  		/* Timeout occured            */
+    YWHAL_ERROR_DEVICE_BUSY,              		/* Device is currently busy   */
+    YWHAL_ERROR_NOT_OPEN,						/*Device is not open*/
+    YWHAL_ERROR_NOT_ENOUGH_DEVICE				/*Device is all opened*/
 };
-
 
 /*variable type*******************************************************/
 typedef	signed char		    S8;
@@ -142,16 +140,14 @@ typedef U32					BOOL;
 typedef U32 				YW_ErrorType_T;
 typedef U32       			YW_EventType_T;
 
-
 #ifdef ARCHITECTURE_ST40
 typedef struct U64_s
 {
-	unsigned int LSW;
-	unsigned int MSW;
-} U64;
+    unsigned int LSW;
+    unsigned int MSW;
+}U64;
 
 typedef U64 S64;
-
 
 /*Value=A+B, where A & B is U64 type*/
 #define YWI64_Add(A,B,Value)      { register long long T1,T2,Val; \
@@ -268,6 +264,6 @@ typedef U64 S64;
 #endif /*#ifdef ARCHITECTURE_ST40*/
 
 #define YW_HandleValid(Table, Max, Handle) ((Handle) >= (U32)&(Table)[0] \
-
+					     
 #endif /* __AOTOM_YWDEFS_H__ */
 

@@ -57,7 +57,7 @@ obj-y += adb_box_vfd/front_bsla/
 endif
 
 ifdef SPARK
-obj-y += aotom_spark/
+obj-y += aotom/
 endif
 
 ifdef SPARK7162
